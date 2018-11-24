@@ -1,5 +1,6 @@
 # PortinariGreenGarden
-ESP8266 controller for green garden watering
+
+##ESP8266 Based Green Garden Watering System
 
 ## Configuration
 
@@ -10,6 +11,6 @@ module.SSID["NAME"] = "PASSWORD"
 ```
 Pins used are 1 and 2 but you can change and/or add at `sprinklers.lua`.
 
+![GreenGarden](https://github.com/pedromalta/PortinariDucks/raw/master/20180526_215952.jpg)
 
-![GreenGarden](https://github.com/pedromalta/PortinariDucks/raw/master/20180526_215952.jpg
-)
+
