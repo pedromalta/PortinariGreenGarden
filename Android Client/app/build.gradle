@@ -1,0 +1,192 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
+apply plugin: 'kotlin-kapt'
+
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+}
+
+android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "pedromalta.portinari.dev"
+        minSdkVersion 22
+        targetSdkVersion 28
+        versionCode 2
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+
+        buildConfigField("String", "DRIVIN_API_URL", "\"${ApiUrlDev}\"")
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("/Users/rogerio/Desktop/key-drivin")
+            storePassword "123456"
+            keyAlias "key-drivin"
+            keyPassword "123456"
+        }
+    }
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles 'proguard-android.txt'
+            buildConfigField("String", "DRIVIN_API_URL", "\"${ApiUrl}\"")
+            resValue("bool", "HTTP_DEBUGGER", "false")
+            resValue("bool", "OVERLAY_DEBUGGER", "false")
+        }
+        debug {
+
+        }
+    }
+
+    flavorDimensions 'tier'
+
+    productFlavors {
+        ext.app_version = "0.0.1"
+        development {
+            applicationId = "pedromalta.portinari.dev"
+            dimension "tier"
+            versionName "$app_version-dev"
+            resValue("bool", "HTTP_DEBUGGER", "true")
+            resValue("bool", "OVERLAY_DEBUGGER", "true")
+
+        }
+
+        production {
+            applicationId = "pedromalta.portinari"
+            dimension "tier"
+            versionName "$app_version"
+
+            resValue("bool", "HTTP_DEBUGGER", "false")
+            resValue("bool", "OVERLAY_DEBUGGER", "false")
+        }
+
+    }
+
+
+    lintOptions {
+        textOutput "stdout"
+        textReport true
+        checkAllWarnings true
+        warningsAsErrors true
+        showAll true
+        explainIssues true
+        abortOnError false
+        lintConfig file("$projectDir/lint.xml")
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/license/LICENSE.base64.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/MANIFEST.MF'
+    }
+
+
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.squareup.okio:okio:1.14.1'
+        force 'com.squareup.okhttp3:okhttp:3.10.0'
+        force 'com.android.support:support-v7:26.1.0'
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url 'https://maven.google.com' }
+    mavenCentral()
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+dependencies {
+    ext.anko_version = '0.10.4'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation group: 'org.joda', name: 'joda-convert', version: '2.0.1', classifier: 'classic'
+    implementation 'joda-time:joda-time:2.9.9'
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:preference-v7:28.0.0'
+    implementation 'com.android.support:preference-v14:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-vector-drawable:28.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation 'com.github.vicpinm:krealmextensions:2.2.0'
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    kapt 'android.arch.lifecycle:compiler:1.1.1'
+
+    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+    kapt 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
+    implementation 'com.tspoon.traceur:traceur:1.0.1'
+
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+
+    implementation "org.apache.commons:commons-lang3:3.7"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Portinari</string>
+
+	<!-- Generic Dialogs -->
+    <string name="dialog_action_ok">ok</string>
+    <string name="dialog_loading">carregando&#8230;</string>
+    <string name="dialog_action_cancel">cancelar</string>
+    <string name="dialog_error_title">cesculpe</string>
+
+    <!-- Date Format -->
+    <string name="format_date">%1$td/%1$tm/%1$tY %1$tH:%1$tM</string>
+
+    <!-- Network -->
+    <string name="txt_connection_error">"Não há conexões de rede no momento. Verifique sua conexão de rede.</string>
+
+    <!-- Behavior -->
+
+
+</resources>

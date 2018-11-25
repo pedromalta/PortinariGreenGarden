@@ -1,0 +1,13 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+.DS_Store
+/build
+.idea/
+*iml
+*.iml
+*/build
+fastlane
+.tasks.cache.json
+/hs_err_pid11711.log
+/replay_pid11711.log
