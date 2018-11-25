@@ -46,7 +46,7 @@
             android:id="@+id/sprinkler1_status"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:tint="@color/grey"
+            android:tint="@color/greyLighter"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/sprinkler_icon" />
@@ -55,7 +55,7 @@
             android:id="@+id/sprinkler2_status"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:tint="@color/grey"
+            android:tint="@color/greyLighter"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sprinkler1_status"
             app:srcCompat="@drawable/sprinkler_icon" />

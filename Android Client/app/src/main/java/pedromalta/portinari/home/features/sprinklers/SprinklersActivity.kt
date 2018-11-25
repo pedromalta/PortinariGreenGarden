@@ -12,6 +12,8 @@ import android.widget.TextView
 import com.vicpin.krealmextensions.deleteAll
 import com.vicpin.krealmextensions.queryFirst
 import com.vicpin.krealmextensions.save
+import io.reactivex.Maybe
+import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -58,10 +60,11 @@ class SprinklersActivity : BaseActivity() {
         setupTimeSelect()
         setupBtnIniciar()
         setupBtnParar()
+        updateCountDowns()
     }
 
 
-    private fun setupBtnIniciar(){
+    private fun setupBtnIniciar() {
         btnIniciar.setOnClickListener {
             showLoading(R.string.dialog_loading_sprinkler_status)
             val schedule = Schedule()
@@ -72,23 +75,24 @@ class SprinklersActivity : BaseActivity() {
         }
     }
 
-    private fun setupBtnParar(){
+    private fun setupBtnParar() {
         btnParar.setOnClickListener {
             SchedulerService.stop(this)
-            stopCountDowns()
         }
     }
 
-    private fun updateCountDowns(){
-        Single.create<Schedule> {
+    private fun updateCountDowns() {
+        val countDown = Observable.create<Schedule> {
             val schedule = Schedule().queryFirst()
             if (schedule == null || schedule.isDone) {
-                stopCountDowns()
+
             } else {
-                it.onSuccess(schedule)
+                it.onNext(schedule)
             }
+            it.onComplete()
         }.delaySubscription(1, TimeUnit.SECONDS).repeat()
-                .subscribeOn(Schedulers.io())
+
+        countDown.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { schedule ->
                     timeSprinkler1.text = fromIntToTimeString(schedule.timeRemainingSprinkler1)
@@ -96,12 +100,8 @@ class SprinklersActivity : BaseActivity() {
                 }.addTo(disposable)
     }
 
-    private fun stopCountDowns(){
-        disposable.dispose()
-    }
-
-    private fun setupTimeSelect(){
-        timeSelectTime.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+    private fun setupTimeSelect() {
+        timeSelectTime.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 timeSchedule.text = fromIntToTimeString(progress)
             }
@@ -117,7 +117,7 @@ class SprinklersActivity : BaseActivity() {
         })
     }
 
-    private fun fromIntToTimeString(time: Int): String{
+    private fun fromIntToTimeString(time: Int): String {
         val seconds = time % 60
         val minutes = time / 60
         val formatSeconds = if (seconds > 9) "$seconds" else "0$seconds"
@@ -131,11 +131,11 @@ class SprinklersActivity : BaseActivity() {
         if (schedule == null) {
             resetLayout()
         } else {
-           runningLayout(schedule)
+            runningLayout(schedule)
         }
     }
 
-    private fun runningLayout(schedule: Schedule){
+    private fun runningLayout(schedule: Schedule) {
         btnIniciar.visibility = View.GONE
         btnParar.visibility = View.VISIBLE
         toggleIconSprinkler1(schedule.sprinkler1Status)
@@ -156,20 +156,25 @@ class SprinklersActivity : BaseActivity() {
         timeSelectTime.isEnabled = true
     }
 
-    private fun toggleIconSprinkler1(toggle: Boolean){
+    private fun toggleIconSprinkler1(toggle: Boolean) {
         if (toggle) {
             iconSprinkler1.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.greenDark))
         } else {
-            iconSprinkler1.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.grey))
+            iconSprinkler1.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.greyLighter))
         }
     }
 
-    private fun toggleIconSprinkler2(toggle: Boolean){
+    private fun toggleIconSprinkler2(toggle: Boolean) {
         if (toggle) {
             iconSprinkler2.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.greenDark))
         } else {
-            iconSprinkler2.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.grey))
+            iconSprinkler2.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.greyLighter))
         }
+    }
+
+    override fun onDestroy() {
+        disposable.dispose()
+        super.onDestroy()
     }
 
     override fun onResume() {
