@@ -17,11 +17,15 @@ local function runServer()
   s:listen(config.PORT, function(connection)
     connection:on("receive", function(c, request)
       print(request)
-      local response = requests.process(request)
+      local response = requests.process(c, request)
       c:send(response)
     end)
 
-    connection:on("sent", function(c) c:close() end)
+    connection:on("sent", 
+        function(c) 
+            c:close()
+            collectgarbage()
+        end)
   end)
 end
 
