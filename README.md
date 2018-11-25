@@ -11,7 +11,9 @@ module.SSID["NAME"] = "PASSWORD"
 ```
 Pins used are 1 and 2 but you can change and/or add at `sprinklers.lua`.
 
-Also at the Android Client change the server IP. The ESP will print its IP on bootup
+Also at the Android Client change the server IP. 
+You can access the menu typing calling the number `*3123456#` on the phone standard dialer. 
+The ESP8266 will print its IP on bootup.
 
 ![Android Client](https://github.com/pedromalta/PortinariGreenGarden/raw/master/Pictures/app2.jpeg)
 
