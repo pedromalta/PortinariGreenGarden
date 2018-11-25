@@ -13,5 +13,6 @@ class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         startActivity(Intent(this, SprinklersActivity::class.java))
+        finish()
     }
 }

@@ -19,5 +19,20 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="Portinari.Button.Blue" parent="Portinari.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button_background_blue</item>
+    </style>
+
+    <style name="Portinari.Button.Green" parent="Portinari.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button_background_green</item>
+    </style>
+
+    <style name="Portinari.Button.Pink" parent="Portinari.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button_background_pink</item>
+    </style>
+
 
 </resources>

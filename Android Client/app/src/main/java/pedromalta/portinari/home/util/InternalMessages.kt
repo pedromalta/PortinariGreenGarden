@@ -13,6 +13,7 @@ data class InternalMessages(
     object Actions {
         const val APP_FOREGROUND = "app_foreground"
         const val APP_BACKGROUND = "app_background"
+        const val UPDATE_LAYOUT_STATE = "update_layout_state"
     }
 }
 

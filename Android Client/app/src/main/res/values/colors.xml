@@ -7,6 +7,7 @@
     <color name="colorAlert">@color/pink</color>
 
 
+    <color name="colorPrimaryTransparent">#dd333333</color>
     <color name="dirtyWhite">#f7f7fa</color>
     <color name="greyLighter">#dddddd</color>
     <color name="greyLightest">#ededed</color>
@@ -17,8 +18,12 @@
     <color name="yellow">#f5a623</color>
     <color name="blueLight">#48cfe3</color>
     <color name="blueDark">#0c1433</color>
-    <color name="blueMedium">#5F84CE</color>
     <color name="blue">#3895b3</color>
+    <color name="blueLighter">#68B6D0</color>
+    <color name="blueMedium">#5F84CE</color>
+    <color name="green">#30A48F</color>
+    <color name="greenLighter">#54CDB7</color>
+    <color name="greenDark">#49D169</color>
     <color name="pink">#ec6e6e</color>
-
+    <color name="pinkLighter">#F5B2B2</color>
 </resources>

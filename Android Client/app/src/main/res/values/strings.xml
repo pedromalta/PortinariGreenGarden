@@ -8,7 +8,7 @@
     <string name="dialog_error_title">cesculpe</string>
 
     <!-- Sprinklers -->
-    <string name="dialog_loading_sprinkler_status">atualizando status&#8230;</string>
+    <string name="dialog_loading_sprinkler_status">iniciando irrigação&#8230;</string>
     <string name="header_portinari">portinari home</string>
     <string name="label_area_1">área 1</string>
     <string name="label_area_2">área 2</string>
@@ -21,6 +21,7 @@
     <!-- Network -->
     <string name="txt_connection_error">"não há conexões de rede no momento. Verifique sua conexão de rede.</string>
     <string name="btn_iniciar">iniciar</string>
+    <string name="btn_parar">parar</string>
 
 
 </resources>
