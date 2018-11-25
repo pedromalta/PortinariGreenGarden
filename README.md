@@ -11,6 +11,12 @@ module.SSID["NAME"] = "PASSWORD"
 ```
 Pins used are 1 and 2 but you can change and/or add at `sprinklers.lua`.
 
-![GreenGarden](https://github.com/pedromalta/PortinariDucks/raw/master/20180526_215952.jpg)
+Also at the Android Client change the server IP. The ESP will print its IP on bootup
+
+![Android Client](https://github.com/pedromalta/PortinariGreenGarden/raw/master/Pictures/app2.jpeg)
+
+![ESP8266](https://github.com/pedromalta/PortinariGreenGarden/raw/master/Pictures/20181124_133128.jpg)
+
+![Water Valve](https://github.com/pedromalta/PortinariGreenGarden/raw/master/Pictures/20181124_110628.jpg)
 
 
