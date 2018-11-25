@@ -1,9 +1,10 @@
 package br.com.drivin.features.splash
 
+import android.content.Intent
 import android.os.Bundle
 
 import br.com.drivin.features.base.BaseActivity
-
+import br.com.drivin.features.sprinklers.SprinklersActivity
 
 
 class SplashActivity : BaseActivity() {
@@ -11,6 +12,6 @@ class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //startActivity(LoginActivity.getStartIntent(this))
+        startActivity(Intent(this, SprinklersActivity::class.java))
     }
 }

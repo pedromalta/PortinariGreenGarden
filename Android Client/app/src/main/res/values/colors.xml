@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">@color/grey</color>
+    <color name="colorPrimaryDark">@color/greyDark</color>
+    <color name="colorPrimaryLight">@color/greyLight</color>
+    <color name="colorAccent">@color/blueLight</color>
+    <color name="colorAlert">@color/pink</color>
+
+
+    <color name="dirtyWhite">#f7f7fa</color>
+    <color name="greyLighter">#dddddd</color>
+    <color name="greyLightest">#ededed</color>
+    <color name="greyLight">#aaaaaa</color>
+    <color name="greyDark">#222222</color>
+    <color name="grey">#333333</color>
+    <color name="whiteTransparent">#ddffffff</color>
+    <color name="yellow">#f5a623</color>
+    <color name="blueLight">#48cfe3</color>
+    <color name="blueDark">#0c1433</color>
+    <color name="blueMedium">#5F84CE</color>
+    <color name="blue">#3895b3</color>
+    <color name="pink">#ec6e6e</color>
 
 </resources>

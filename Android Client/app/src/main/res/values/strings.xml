@@ -7,11 +7,14 @@
     <string name="dialog_action_cancel">cancelar</string>
     <string name="dialog_error_title">cesculpe</string>
 
+    <!-- Sprinklers -->
+    <string name="dialog_loading_sprinkler_status">atualizando status&#8230;</string>
+
     <!-- Date Format -->
     <string name="format_date">%1$td/%1$tm/%1$tY %1$tH:%1$tM</string>
 
     <!-- Network -->
-    <string name="txt_connection_error">"Não há conexões de rede no momento. Verifique sua conexão de rede.</string>
+    <string name="txt_connection_error">"não há conexões de rede no momento. Verifique sua conexão de rede.</string>
 
     <!-- Behavior -->
 

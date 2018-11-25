@@ -22,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".features.adminConfig.AdminConfigActivity"/>
+        <activity android:name=".features.adminConfig.AdminConfigActivity"/>
+        <activity android:name=".features.sprinklers.SprinklersActivity"/>
 
 
         <receiver android:name=".features.adminConfig.AdminConfigReceiver" >
