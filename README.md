@@ -2,6 +2,8 @@
 
 ##ESP8266 Based Green Garden Watering System
 
+Check this youtube video of the system working [PortinariGreenGarden](https://www.youtube.com/watch?v=Hd38z8RA7YE)
+
 ## Configuration
 
 Before you start you have to update `config.lua` file and set WiFi credentials:
