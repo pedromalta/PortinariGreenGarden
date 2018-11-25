@@ -27,6 +27,10 @@
         <activity android:name="pedromalta.portinari.home.features.adminConfig.AdminConfigActivity"/>
         <activity android:name="pedromalta.portinari.home.features.sprinklers.SprinklersActivity"/>
 
+        <service
+            android:name=".features.scheduler.SchedulerService"
+            android:enabled="true"
+            android:exported="true" />
 
         <receiver android:name="pedromalta.portinari.home.features.adminConfig.AdminConfigReceiver" >
             <intent-filter>

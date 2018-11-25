@@ -1,14 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button"
+
+    <ImageView
+        android:id="@+id/home_icon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_icon" />
+
+    <TextView
+        android:id="@+id/portinari_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:/>
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryLight"
+        android:text="@string/header_portinari"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_icon"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/sprinklers_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+
+        android:background="@drawable/round_white_box"
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portinari_header">
+
+        <ImageView
+            android:id="@+id/sprinkler1_status"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:tint="@color/grey"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/sprinkler_icon" />
+
+        <ImageView
+            android:id="@+id/sprinkler2_status"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:tint="@color/grey"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sprinkler1_status"
+            app:srcCompat="@drawable/sprinkler_icon" />
+
+        <TextView
+            android:id="@+id/sprinkler1_label_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_area_1"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sprinkler1_status"/>
+
+        <TextView
+            android:id="@+id/sprinkler2_label_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_area_2"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sprinkler2_status"/>
+
+        <TextView
+            android:id="@+id/sprinkler1_label_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sprinkler1_status"/>
+
+        <TextView
+            android:id="@+id/sprinkler2_label_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sprinkler2_status"/>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/sprinklers_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+
+        android:background="@drawable/round_white_box"
+        android:padding="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sprinklers_status">
+
+        <ImageView
+            android:id="@+id/sprinkler"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/sprinkler_icon" />
+
+        <TextView
+            android:id="@+id/scheduler_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/irrigation_time"
+            android:textSize="20sp"
+            app:layout_constraintRight_toRightOf="@+id/scheduler_seekbar"
+            app:layout_constraintLeft_toLeftOf="@+id/scheduler_seekbar"
+            app:layout_constraintBottom_toTopOf="@+id/scheduler_seekbar"/>
+
+        <SeekBar
+            android:id="@+id/scheduler_seekbar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="0"
+            android:progress="30"
+            app:layout_constraintLeft_toRightOf="@+id/sprinkler"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/scheduler_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="@+id/scheduler_seekbar"
+            app:layout_constraintLeft_toLeftOf="@+id/scheduler_seekbar"
+            app:layout_constraintTop_toBottomOf="@+id/scheduler_seekbar"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/btn_iniciar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sprinklers_frame" />
+
+
+
+
+
+
+
 </android.support.constraint.ConstraintLayout>

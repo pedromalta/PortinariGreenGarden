@@ -9,14 +9,18 @@
 
     <!-- Sprinklers -->
     <string name="dialog_loading_sprinkler_status">atualizando status&#8230;</string>
+    <string name="header_portinari">portinari home</string>
+    <string name="label_area_1">área 1</string>
+    <string name="label_area_2">área 2</string>
+    <string name="timer">00:00</string>
+    <string name="irrigation_time">tempo de irrigação</string>
 
     <!-- Date Format -->
     <string name="format_date">%1$td/%1$tm/%1$tY %1$tH:%1$tM</string>
 
     <!-- Network -->
     <string name="txt_connection_error">"não há conexões de rede no momento. Verifique sua conexão de rede.</string>
-
-    <!-- Behavior -->
+    <string name="btn_iniciar">iniciar</string>
 
 
 </resources>
