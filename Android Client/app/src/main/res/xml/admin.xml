@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_api_url"
+        android:title="@string/pref_label_api_url"
+        android:summary="@string/pref_summary_api_url"
+        android:inputType="textUri" />
+    <CheckBoxPreference
+        android:key="pref_http_debugger"
+        android:title="@string/pref_label_http_debugger"
+        android:summary="@string/pref_summary_http_debugger"
+        android:defaultValue="@bool/HTTP_DEBUGGER" />
+</PreferenceScreen>

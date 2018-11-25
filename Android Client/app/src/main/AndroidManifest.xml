@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="pedromalta.portinari.home.features.adminConfig.AdminConfigActivity"/>
+        <activity android:name="pedromalta.portinari.home.features.config.ConfigActivity"/>
         <activity android:name="pedromalta.portinari.home.features.sprinklers.SprinklersActivity"/>
 
         <service
@@ -32,7 +32,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <receiver android:name="pedromalta.portinari.home.features.adminConfig.AdminConfigReceiver" >
+        <receiver android:name="pedromalta.portinari.home.features.config.ConfigReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>

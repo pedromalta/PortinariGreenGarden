@@ -23,5 +23,11 @@
     <string name="btn_iniciar">iniciar</string>
     <string name="btn_parar">parar</string>
 
+    <!-- Admin Config -->
+
+    <string name="pref_label_api_url">API</string>
+    <string name="pref_summary_api_url">Entre com a URL da API</string>
+    <string name="pref_label_http_debugger">Debugger HTTP</string>
+    <string name="pref_summary_http_debugger">Exibe notificações das requisições HTTP</string>
 
 </resources>
