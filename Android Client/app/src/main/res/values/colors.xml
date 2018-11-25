@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/grey</color>
-    <color name="colorPrimaryDark">@color/greyDark</color>
-    <color name="colorPrimaryLight">@color/greyLight</color>
-    <color name="colorAccent">@color/blueLight</color>
+    <color name="colorPrimary">@color/greyDark</color>
+    <color name="colorPrimaryDark">@color/grey</color>
+    <color name="colorPrimaryLight">@color/greyLighter</color>
+    <color name="colorAccent">@color/yellow</color>
     <color name="colorAlert">@color/pink</color>
 
 

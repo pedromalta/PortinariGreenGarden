@@ -1,11 +1,11 @@
 <resources>
     <!-- Splash Theme. -->
     <style name="Portinari.Splash" parent="Portinari">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowBackground">@drawable/bg_image</item>
     </style>
 
     <style name="Portinari" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:windowBackground">@drawable/gradient_bg</item>
+        <item name="android:windowBackground">@drawable/bg_image</item>
         <item name="android:colorPrimary">@color/colorPrimary</item>
         <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:colorAccent">@color/colorAccent</item>
