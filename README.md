@@ -2,7 +2,7 @@
 
 ##ESP8266 Based Green Garden Watering System
 
-Check this youtube video of the system working [PortinariGreenGarden](https://www.youtube.com/watch?v=Hd38z8RA7YE)
+Check this **YouTube video** of the system working [PortinariGreenGarden](https://www.youtube.com/watch?v=Hd38z8RA7YE)
 
 ## Configuration
 
